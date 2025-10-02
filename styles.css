@@ -1,6 +1,6 @@
 header{
-    background-color: gray;
-    color: white;
+    background-color: rgb(247, 255, 142);
+    color: rgb(248, 45, 45);
     text-align: center;
     padding: 3px;
 }
@@ -27,4 +27,8 @@ li a{
 li a:hover{
     background-color: rgb(75, 238, 69);
     color: rgb(255, 34, 163);
+}
+.active{
+    color:blueviolet;
+    background-color: rgb(187, 182, 182);
 }
