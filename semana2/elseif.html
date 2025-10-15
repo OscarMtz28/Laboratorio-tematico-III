@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h2>JavaScript if else if</h2>
+        <p>
+            Mostrar "Buenos dias" si la hora es menor que las 12:00, "Buenas tardes" si es de 12:00
+            a 19:00, en otro caso, "Buenas noches"
+        </p>
+        <p id="demo"></p>
+        <script>
+            const hora = new Date().getHours();
+            let saludo;
+            if(hora < 12){
+                saludo = "Buenos dias";
+            }else if(hora < 19){
+                saludo = "Buenas tardes"
+            }
+            document.getElementById("demo").innerHTML = saludo;
+        </script>
+    </body>
+</html>
