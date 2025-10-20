@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function miOtraFuncion(){
+                document.getElementById("demo3").innerHTML = "Hola a todos";
+            }
+        </script>
+    </head>
+<body>
+    <h1>Funciones en JavaScript</h1>
+    <p>Se pueden llamar funciones al cargar un documento.</p>
+    <p id="demo1"></p>
+
+    <p>Una funcion puede tener argumentos/parametros y un valor de retorno</p>
+    <p id="demo2"></p>
+
+    <p>Tambien se puede definir funciones en el encabezado de html</p>
+
+    <button type="button" onclick="miOtraFuncion()">Click para llamar la funcion</button>
+    <p id="demo3"></p>    
+    <script>
+        function miPrimeraFuncion() {
+            document.getElementById("demo1").innerHTML = "Hola mundo.";
+        }
+        miPrimeraFuncion();
+        // Funcion con argumentos y retorno
+        function operacion(a, b) {
+            return a * b;
+        }
+        let valor = operacion(4, 1);
+        document.getElementById("demo2").innerHTML = valor;
+    </script>
+</body>
+
+</html>

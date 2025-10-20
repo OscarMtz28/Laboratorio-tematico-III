@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    <h1>Cadenas en JavaScript</h1>
+    <p>Se puede definir una cadena utilizando comillas simples o dobles.</p>
+    <p id="demo1"></p>
+    <h2>Longitud de cadenas</h2>
+    <p>Se puede obtener la longitud o tamaño de una cadena a traves de la propiedad <i>lenght</i></p>
+    <p id="demo2"></p>
+    <script>
+        let txt1a = "Hola";
+        let txt1b = "Adios";
+        let txt1c = 'Su nombre es "Firulais".';
+        let txt1d = "Su nombre no es 'Firulais'";
+        let txt1e = `Alberto's nickname is "Beto"`;
+        let txt1f = "\' \" \\ (Imprimibles), \\t \\n No imprimibles: (tabulacion, salto de linea)";
+        document.getElementById("demo1").innerHTML = txt1a + "<br>" + txt1b + "<br>" + txt1c + "<br>" + txt1d + "<br>" + txt1e + "<br>" + txt1f;
+        // document.write(txt1f);
+        // Longitud 
+        let n = txt1e.length;
+        document.getElementById("demo2").innerHTML = "La longitud de la cadena txt1e es: " + n;
+    </script>
+
+</body>
+
+</html>

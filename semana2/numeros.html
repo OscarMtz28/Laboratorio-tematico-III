@@ -1,0 +1,87 @@
+<html>
+
+<body>
+    <h1>Numeros en JavaScript</h1>
+
+    <h2>Precision de los enteros</h2>
+
+    <p>Los enteros (numeros sin punto decimal o notacion exponencial) tienen precision hasta de 15 digitos</p>
+
+    <p id="demo1"></p>
+
+    <h2>Precision de decimales/flotantes</h2>
+
+    <p>La aritmetica con punto decimal no siempre es 100% exacta.</p>
+
+    <p id="demo2"></p>
+
+    <p>Para subsanar el problema puede ser util multiplicar y dividir</p>
+
+    <p id="demo3"></p>
+
+    <h2>Numeros y cadenas</h2>
+
+    <p>Las cadenas pueden contener numeros. Su funcionamiento en operaciones puede variar</p>
+
+    <p id="demo4"></p>
+
+    <h2>NaN - Not a Number</h2>
+
+    <p>NaN es una palabra reservada de JavaScript que indica que el elemento no es un numero valido</p>
+
+    <p id="demo5"></p>
+
+    <h2>Infinity</h2>
+
+    <p>Infinity es un valor que aparece en dos casos. El primero es al dividir entre 0</p>
+
+    <p id="demo6"></p>
+
+    <p>El segundo es cuando se calcula un valor fuera de rango del numero mas grande</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        let x = 99999999999999;
+        let y = 999999999999999;
+        document.getElementById("demo1").innerHTML = x + y + "<br>" + x + "<br>" + y;
+        let z1 = 0.2 + 0.1;
+        document.getElementById("demo2").innerHTML = "0.2 + 0.1 = " + z1;
+        let z2 = (0.2 * 10 + 0.1 * 10) / 10; // Cambio de base, multipico y divido en 10
+        document.getElementById("demo3").innerHTML = "0.2 + 0.1 = " + z2;
+
+        // Numeros y cadenas
+
+        let a = 10;
+        let b = "20";
+        let suma = a + b;
+        let resta = a - b;
+        let multi = a * b;
+        let div = a / b;
+
+        document.getElementById("demo4").innerHTML = "Variables: a = " + a + ", b " + b + "<br>" + " a + b = " + suma + "<br>" +
+            " a - b = " + resta + "<br>" +
+            " a * b = " + multi + "<br>" +
+            " a / b = " + div + "<br>";
+
+        // NaN
+        let c = 100 / "Hola";
+        document.getElementById("demo5").innerHTML = c;
+
+        // Infinity
+        let d1 = 10/0;
+        let d2 = -10/0;
+
+        document.getElementById("demo6").innerHTML = " 10 / 0 = " + d1 + "<br> -10 / 0 = " + d2 + "<br>";
+
+        let n = 3;
+        let txt = "";
+        while(n!=Infinity){
+            n  = n * n;
+            txt += n + "<br>";
+        }
+        document.getElementById("demo7").innerHTML = txt;
+    </script>
+</body>
+
+</html>
