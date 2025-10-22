@@ -7,18 +7,102 @@
     <h2>Longitud de cadenas</h2>
     <p>Se puede obtener la longitud o tamaño de una cadena a traves de la propiedad <i>lenght</i></p>
     <p id="demo2"></p>
+    <h2>charArt y charCodeArt</h2>
+    <p>El metodo charArt devuelve el caracter que se encientra en una posicion especifica (indice) dentro de una cadena. El metodo charCodeArt devuelve el codigo UTF-16 del caracter</p>
+    <p id="demo3"></p>
+    <h2>Metodo at</h2>
+    <p>El metodo at() devuelve el caracter que se encuentra en un indice especifico. La diferencia con charAt es que se pueden usar indices negativos (de derecha a izquierda)</p>
+    <p id="demo4"></p>
+    <h2>Convertir a mayusculas y minusculas</h2>
+    <p>Papara convertir a mayusculas se usa el metodo toUpperCase(). Para convertir en minusculas se utiliza toLowerCase()</p>
+    <p id="demo5"></p>
+    <h2>Concatenar</h2>
+    <p>Se puede concatenar con el operador +, pero tambien existe el metodo concat() que permite unir cadenas</p>
+    <p id="demo6"></p>
+    <h2>Trim</h2>
+    <p>El metodo trim() elimina los espacios en blanco al inicio y al final de una cadena</p>
+    <p id="demo7"></p>
+    <h2>Repetir</h2>
+    <p>El metodo repeat() devuelve una cadena con un numero especificaso de repeticiones de un string</p>
+    <p id="demo8"></p>
+    <h2>Extraer texto</h2>
+    <p>Se pueden utilizar 3 metodos para extraer una parte de una cadena: slice(inicio, fin), substring(inicio, fin) y substr(inicio,fin)</p>
+    <p id="demo9"></p>
+    <h2>Padding</h2>
+    <p>Los metodos padStart() y padEnd() permiten rellenar una cadena con los caracteres especificados</p>
+    <p id="demo10"></p>
+    <h2>Split</h2>
+    <p>Si se tiene una cadena con elementos separados por un caracter especifico se pueden convertir en un arreglo a traves de split()</p>
+    <p id="demo11"></p>
+    <h2>Replace</h2>
+    <p>Este metodo permite encontrar una cadena especifica y reemplazarla por otra</p>
+    <p id="demo12"></p>
     <script>
         let txt1a = "Hola";
         let txt1b = "Adios";
         let txt1c = 'Su nombre es "Firulais".';
         let txt1d = "Su nombre no es 'Firulais'";
-        let txt1e = `Alberto's nickname is "Beto"`;
+        let txt1e = `        Alberto's       nickname is "Beto       "   `;
         let txt1f = "\' \" \\ (Imprimibles), \\t \\n No imprimibles: (tabulacion, salto de linea)";
         document.getElementById("demo1").innerHTML = txt1a + "<br>" + txt1b + "<br>" + txt1c + "<br>" + txt1d + "<br>" + txt1e + "<br>" + txt1f;
+        
         // document.write(txt1f);
-        // Longitud 
+        // // Longitud 
+        
         let n = txt1e.length;
         document.getElementById("demo2").innerHTML = "La longitud de la cadena txt1e es: " + n;
+        
+        // charArt() y charCodeArt()
+
+        let c1 = txt1a.charAt(2);
+        let c2 = txt1a.charCodeAt(2);
+        document.getElementById("demo3").innerHTML = c1 + " - " + c2;
+
+        // Metodo at
+
+        let c3 = txt1c.at(6);
+        let c4 = txt1c.at(-6);
+        document.getElementById("demo4").innerHTML = c3 + " - " + c4;
+
+        // Convertir metodo UpperCase y LowerCase
+
+        document.getElementById("demo5").innerHTML = txt1c.toUpperCase() + " - " + txt1c.toLowerCase();
+
+        // concatenacion
+
+        document.getElementById("demo6").innerHTML = txt1a.concat(" - "+txt1b);
+
+        // Trim
+
+        document.getElementById("demo7").innerHTML = txt1e  + " - " + txt1e.trim();
+
+        // repeat
+
+        document.getElementById("demo8").innerHTML = txt1b.repeat(5);
+
+        // Extraer texto
+
+        document.getElementById("demo9").innerHTML = 
+        txt1d.slice(3, 11) + "<br>" + 
+        txt1d.slice(-11, -3) + "<br>" + 
+        txt1d.substring(3, 11) + "<br>" +
+        txt1d.substring(-11, 3) + "<br>" +
+        txt1d.substr(-10, 5);
+
+        // Padding
+        
+        let num = 5;
+        let txt = num.toString();
+        document.getElementById("demo10").innerHTML = txt.padStart(5, "0") + " -- " + txt.padEnd(5, "0");
+        
+        // Split
+        
+        
+        
+        // Replace
+
+
+
     </script>
 
 </body>
