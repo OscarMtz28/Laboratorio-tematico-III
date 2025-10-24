@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h2>JavaScript Arrays (Funciones)</h2>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <script>
+            const frutas = [" Platano 🍌", "Manzana 🍎", "Uva 🍇", "Naranja 🍊", "Limon 🍋"];
+            document.getElementById("demo1").innerHTML = "Arreglo: " + frutas; 
+            document.getElementById("demo2").innerHTML = 
+            "Tamaño: " + frutas.length + "<br>" + 
+            "ToString: " + frutas.toString() + "<br>" +
+            "Join: <br>" + frutas.join("<br>✊🏼<br>") + "<br>" + 
+            "Pop: " + frutas.pop() + "-------------" + frutas + "<br>" + 
+            "Push: " + frutas.push("Fresa 🍓") + frutas + "<br>" +
+            "Shift: " + frutas.shift() + "----------" + frutas + "<br>" + 
+            "Unshift: " + frutas.unshift("Fresa") + " ------ " + frutas;
+        </script>
+    </body>
+</html>

@@ -97,11 +97,26 @@
         
         // Split
         
-        
+        let cad = "blanco, negro, rojo, verde, azul, morado, naranja, amarillo";
+        let colores = cad.split(",");
+        let b_imp = "";
+        for (let color of colores){
+            b_imp += color + "<br>";
+        } 
+        document.getElementById("demo11").innerHTML = b_imp;
         
         // Replace
 
+        let pet = "I love cats. Cats are very easy to love. Cats are very popular";
+        let pet1 = pet.replace("cats", "dogs");
+        let pet2 = pet.replace("cats", "dogs");
 
+        let pet3 = pet.replace(/CATS/i, "Dogs"); // insensitive
+        let pet4 = pet.replace(/Cats/g, "Dogs"); // global match --> altera todas las coincidencias
+        let pet5 = pet.replace(/Cats/ig, "Dogs"); // ambas banderas
+        let pet6 = pet.replaceAll("Cats", "Dogs");
+        let pet7 = pet6.replaceAll("cats", "dogs");
+        document.getElementById("demo12").innerHTML = pet7;
 
     </script>
 
