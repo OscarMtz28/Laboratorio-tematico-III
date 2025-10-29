@@ -1,0 +1,105 @@
+<html>
+
+<body>
+    <h1>JavaScript Arrays (Iteraciones)</h1>
+
+    <p>Realiza un instruccion por cada elemento del arreglo</p>
+    <h2>forEach()</h2>
+    <p id="demo1"></p>
+
+    <h2>map()</h2>
+    <p>El metodo map() crea un nuevo arreglo al ejecutar una funcion en cada elemento del arrreglo</p>
+    <p id="demo2"></p>
+
+    <h2>filtra()</h2>
+    <p>Crea un nuevo arreglo unicamente con los elementos que cumplan una condicion.</p>
+    <p id="demo3"></p>
+
+    <h2>reduce()</h2>
+    <p>Ejecuta una funcion en cada elemento del arreglo para producir un valor final</p>
+    <p id="demo4"></p>
+
+    <h2>every()</h2>
+    <p>Comprueba si todos los elementos de un arreglo cumplen una condicion</p>
+    <p id="demo5"></p>
+
+    <h2>some()</h2>
+    <p>Comprueba si alguno de los elementos de un arreglo cumple con una condicion</p>
+    <p id="demo6"></p>
+
+    <h2>some()</h2>
+    <p>Regresa un arrego desde cualquier objeto que cuente con la propiedad lenght o desde cualquier objeto iterable</p>
+    <p id="demo7"></p>
+
+    <h2>entries()</h2>
+    <p>Genera un objeto que contiene pares de indices y valores</p>
+    <p id="demo8"></p>
+
+    <script>
+        const numeros = [-45, 4, 9, 16, 25, 11];
+        let txt = "";
+
+        numeros.forEach(Imprimir);
+
+        document.getElementById("demo1").innerHTML = txt;
+
+        const numMap = numeros.map(alDoble);
+
+        document.getElementById("demo2").innerHTML = numMap;  
+
+        const numsflt = numeros.filter(mayor10);
+
+        document.getElementById("demo3").innerHTML = numsflt;
+
+        let suma = numeros.reduce(sumatoria, 0);
+        
+        document.getElementById("demo4").innerHTML = suma;
+
+        let cond = numeros.every(mayor10);
+
+        document.getElementById("demo5").innerHTML = cond;
+        
+        let algun = numeros.some(mayor10);
+
+        document.getElementById("demo6").innerHTML = algun;
+
+        const alfabeto = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+
+        document.getElementById("demo7").innerHTML = alfabeto + "- - - -" +Array.isArray(alfabeto);
+
+        const frutas = ["Manzana", "Pera", "Naranja", "Mango"];
+
+        const objFruta = frutas.entries();
+
+        document.getElementById("demo8").innerHTML = objFruta;
+
+        for (let x of objFruta){
+            document.getElementById("demo8").innerHTML += x + "<br>";
+        }
+
+        // Funcion imprimir para forEach
+        function Imprimir(value, index, array) {
+            txt += value + "<br>";
+        }
+
+        // Funcion alDoble
+        function alDoble(value, index, array) {
+            return value * 2 + "";
+        }
+
+        // Funcion que evalua si un numero en el array es mayor a 10
+        function mayor10(value, index, array) {
+            // Puede ir con un argumento o 3(value, index, array)
+            return value > 10;
+        }
+
+        // Funcion sumatoria
+        function sumatoria(total, value, index, array) {
+            return total + value;
+        }
+
+
+    </script>
+</body>
+
+</html>
