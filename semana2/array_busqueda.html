@@ -1,0 +1,66 @@
+<html>
+    <body>
+        <h1>JavaScript Arrays (Busquedas)</h1>
+
+        <h2>IndexOf()</h2>
+        <p>Devuelve el indice donde se encuentra el elemento especificado.</p>
+        <p id="demo1"></p>
+
+        <h2>lastIndexOf()</h2>
+        <p>Devuelve el indice donde se encuentra el ultimo elemento especificado</p>
+        <p id="demo2"></p>
+
+        <h2>includes()</h2>
+        <p>Devuelve <i>True</i> si se encuentra el elemento y <i>False</i> si no existe en el arreglo</p>
+        <p id="demo3"></p>
+
+        <h2>find()</h2>
+        <p>Devuelve el primer valor que cumple con una funcion de prueba</p>
+        <p id="demo4"></p>
+
+        <h2>findIndex()</h2>
+        <p>Devuelve el indice del primer valor que cumple con una funcion de prueba</p>
+        <p id="demo5"></p>
+
+        <h2>findLast()</h2>
+        <p>Recorre el arreglo y devuelve el valor del primer elemento que satisface una funcion.</p>
+        <p id="demo6"></p>
+
+        <h2>findLastIndex()</h2>
+        <p>Recorre el arreglo y devuelve el valor del indice del primer elemento que satisface una funcion.</p>
+        <p id="demo7"></p>
+
+        <script>
+
+        const frutas = [" Platano 🍌", "Manzana 🍎", "Uva 🍇", "Naranja 🍊", "Limon 🍋", "Fresa 🍓"];
+        let indice1 = frutas.indexOf("Uva 🍇");
+        document.getElementById("demo1").innerHTML = indice1;
+
+        let indice2 = frutas.lastIndexOf("Uva 🍇");
+        document.getElementById("demo2").innerHTML = indice2;
+
+        let existe = frutas.includes("Uva 🍇");
+        document.getElementById("demo3").innerHTML = existe;
+        // Arreglos con numeros
+        const numeros = [4,22,9,16,25,29];
+        let valor = numeros.find(mayor20);
+        // funcion de prueba para find
+        function mayor20(value, index, array){
+            return value > 20;
+        }
+        document.getElementById("demo4").innerHTML = valor;
+
+        let ivalor =numeros.findIndex(mayor20);
+        document.getElementById("demo5").innerHTML = ivalor;
+
+        const temp = [30,27,28,42,35,40,30];
+        let tmayor = temp.findLast(x => x > 40);
+        document.getElementById("demo6").innerHTML = tmayor;
+
+        let itmayor = temp.findLastIndex(x => x > 40);
+        document.getElementById("demo7").innerHTML = itmayor;
+
+
+        </script>
+    </body>
+</html>

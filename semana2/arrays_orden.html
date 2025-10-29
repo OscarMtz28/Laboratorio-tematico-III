@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <script>
+            // Arreglo de texto
+            const frutas = [" Platano 🍌", "Manzana 🍎", "Uva 🍇", "Naranja 🍊", "Limon 🍋", "Fresa 🍓"];
+            document.getElementById("demo1").innerHTML =
+            "Arreglo: " + frutas + "<br>" + 
+            "Ordenar(sort): " + frutas.sort() + "<br>" +
+            "Reflejar o invertir: " + frutas.reverse() + "<br>";
+            // Arreglo numerico
+            const numeros = [40,100,1,5,25,10];
+            document.getElementById("demo2").innerHTML = 
+            "Numeros: " + numeros + "<br>" +
+            "Numeros ordenados: " + numeros.sort() + "<br>" +
+            "Ordenar (ascendente): " + numeros.sort(function(a,b){return a-b}) + "<br>" + 
+            "Ordenar (descendente): " + numeros.sort(function(a,b){return b-a   }) + "<br>" + 
+            "Desordenar (aleatorio): " + numeros.sort(function(){return 0.5-Math.random()})
+            ;
+        </script>
+    </body>
+</html>

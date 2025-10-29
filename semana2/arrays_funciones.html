@@ -9,12 +9,26 @@
             document.getElementById("demo1").innerHTML = "Arreglo: " + frutas; 
             document.getElementById("demo2").innerHTML = 
             "Tamaño: " + frutas.length + "<br>" + 
+            // Metodos de un arreglo
             "ToString: " + frutas.toString() + "<br>" +
             "Join: <br>" + frutas.join("<br>✊🏼<br>") + "<br>" + 
             "Pop: " + frutas.pop() + "-------------" + frutas + "<br>" + 
             "Push: " + frutas.push("Fresa 🍓") + frutas + "<br>" +
             "Shift: " + frutas.shift() + "----------" + frutas + "<br>" + 
-            "Unshift: " + frutas.unshift("Fresa") + " ------ " + frutas;
+            "Unshift: " + frutas.unshift("Fresa") + " ------ " + frutas
+            // Metodos con mas de un arreglo
+            const verduras = ["Lechuga 🥬", "Cebolla 🧅", "Papa 🥔"];
+            const semillas = ["Arroz 🍚", "Frijol 🫘", "Lentejas 🦂"];
+            const arr1 = [[1,2,3],[4,5,6]];
+            const arr2 = arr1.flat(); //[1,2,3,4,5,6]
+            frutas2 = [" Platano 🍌", "Manzana 🍎", "Uva 🍇", "Naranja 🍊", "Limon 🍋", "Fresa 🍓"];
+
+            const citricos = frutas2.slice(2);
+            document.getElementById("demo3").innerHTML = "Unir arreglos: " + frutas.concat(verduras, semillas) + "<br>" +
+            "Flat: " + arr1.toString() + "--" + arr2 + "<br>" +
+            "Splice: " + verduras.splice(1,1, "Jitomate", "Cilantro") + "<br>" + verduras + "<br>" +
+            "Slice: " + citricos
+            ;
         </script>
     </body>
 </html>
