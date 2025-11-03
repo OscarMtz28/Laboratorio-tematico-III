@@ -1,46 +1,83 @@
 <html>
     <head>
         <style>
-            .fecha{
-                color: rebeccapurple;
+            .fecha {
+                color: rgb(207, 8, 207);
             }
         </style>
     </head>
     <body>
         <h2>JavaScript Date</h2>
-        <p>Utilizar Date() sin argumentos crea un objeto con la fecha y hora actual</p>
+        <p>Utilizar date sin argumentos crea un objeto con la fecha y hora actual.</p>
         <p id="demo1" class="fecha"></p>
-        <p>Utilizar Date(date String) crea un objeto a partir del argumento</p>
+
+        <p>Utilizar Date(date String) crea un objeto con la fecha y hora actual.</p>
         <p id="demo2" class="fecha"></p>
-        <p>Utilizar Date(year, month, day,...) crea un objeto a partir del argumento numerico correspondiente</p>
+        
+        <p>Utilizar Date(year, month, day,...) crea un objeto a partir del argumento numerico correspondiente.</p>
         <p id="demo3" class="fecha"></p>
-        <p>Utilizar Date(milisegundos) crea al objeto a partir del agumento numerico correspondiente</p>
+
+        <p>Utilizar Date(miliseconds) crea el objeto a partir del argumento numerico correspondiente.</p>
         <p id="demo4" class="fecha"></p>
+
+        <p>Utiliar toDAteString() permite mostrar en un formato donde solo aparece la fecha. Con totimeString muestra la hora.</p>
+        <p id="demo5" class="fecha"></p>
+
+        <h2>Fecha personalizada</h2>
+        <p id="demo6" class="fecha"></p>
+
+        <p id="demo7" class="fecha"></p>
+        <p id="demo8" class="fecha"></p>
+
+
         <script>
-            const d1 = new Date;
-            document.getElementById("demo1").innerHTML = d1;
+            const d1 = new Date();
+            document.getElementById("demo1"). innerHTML = d1;
 
             const d2a = new Date("2025-10-28");
-
-            const d2b = new Date("December 10, 2024 16:25:00")
-
+            const d2b = new Date("December 10, 2024 12:32:33");
             document.getElementById("demo2").innerHTML = d2a + "<br>" + d2b;
 
-            const d3a = new Date(2025,10,30,16,31,30);
-            const d3b = new Date(2025,10, 30);
-
+            const d3a = new Date(2025, 10, 30, 16, 31, 59);
+            const d3b = new Date(2025, 10, 15);
             document.getElementById("demo3").innerHTML = d3a + "<br>" + d3b;
 
-            // tiempo en cero de JS
-
+            //Tiempo cero en JS
             const d4a = new Date(0);
             const d4b = new Date(100000000000);
             const d4c = new Date(-1000000000000);
-            const d4d = new Date(7 * 24 * 60 * 60 * 1000);
-            document.getElementById("demo4").innerHTML = d4a.toString() + " - (tiempo cero) <br>" + d4b + "<br>" + d4c + "<br>" + d4d + "<br>";
+            const d4d = new Date(7 * 24 * 60 * 60 *1000); //Una semana
+            document.getElementById("demo4").innerHTML = d4a.toString() + " - (Tiempo cero) <br>" + d4b  + "<br>" + d4c + "<br>"+ d4d + "<br>";
 
+            //Mostrar solo la fecha 
+            document.getElementById("demo5").innerHTML = d1.toDateString() + " -- " + d1.toTimeString() + "<br>" ;
 
+            //Fecha personalizada
+            const dia = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+            const mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"];
+            
+            const fecha = d1.getDate() + "/" + (d1.getMonth() + 1) + "/" + d1.getFullYear();
+            const hora = d1.getHours().toString().padStart(2,"0") + ":" + d1.getMinutes().toString().padStart(2,"0");
 
+            document.getElementById("demo6").innerHTML = fecha + "- - -" + hora;
+
+            const fecha_compl = dia[d1.getDay()] + ", " + d1.getDate() + " " + mes[d1.getMonth()] + " " + d1.getFullYear();
+            document.getElementById("demo7").innerHTML = fecha_compl;
+
+            // Horas en formato de 12 horas
+
+            let horas = d1.getHours();
+            let minutos = d1.getMinutes();
+            // Revisar si es am o pm
+            let formato12 = horas >= 12 ? "PM" : "AM";
+            // Convertir horas al formato corresponiente
+            horas = horas % 12;
+            // Mostrar "12" en lugar de "0"
+            horas = horas ? horas : 12;
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+
+            const hora12 = horas + ":" + minutos + " " + formato12;
+            document.getElementById("demo8").innerHTML = hora12;
         </script>
     </body>
 </html>

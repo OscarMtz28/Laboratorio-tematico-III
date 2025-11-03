@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <h2>JavaScript Objetos (Constructor)</h2>
+    <p>
+      Si se requiere crear varios objetos del mismo tipo, se utiliza una funcion
+      Constructor de objetos
+    </p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      //Funcion constructor para el objeto Persona
+      function Persona(nombre, apellido, edad, ocupacion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.ocupacion = ocupacion;
+        // Metodo declarado explicitamente en el constructor
+        this.nombreCompleto = function () {
+          return this.nombre + " " + this.apellido;
+        };
+      }
+      // Creamos instancias del objeto Persona
+      const miObjeto = new Persona("Oscar", "Martinez", 25, "Alucno");
+      const miObjeto2 = new Persona("lalo", "Lucas", 20, "Estudi-hambreado");
+      document.getElementById("demo1").innerHTML =
+        miObjeto.nombreCompleto() + "<br>" + miObjeto2.nombreCompleto();
+      // Añadir al objeto original un metodo que cambie el apqellido
+      Persona.prototype.cambiarApellido = function (apellido) {
+        this.apellido = apellido;
+      };
+      // Cambiar el apellido con el metodo recien creado
+      miObjeto2.cambiarApellido("Becerril");
+      document.getElementById("demo2").innerHTML = miObjeto2.nombreCompleto();
+      // Agregar un atributo
+      Persona.prototype.nacionalidad = "mexicana";
+      document.getElementById("demo2").innerHTML +=
+        "<br>" + miObjeto.nacionalidad + "<br>" + miObjeto2.nacionalidad;
+    </script>
+  </body>
+</html>

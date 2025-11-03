@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h2>JavaScript en objetos</h2>
+        <p>En los objetos de JavaScript podemos tener propiedades o atributos, ademas de metodos</p>
+        <p id="demo1"></p>
+        <script>
+            const Persona = {
+                nombre: "Oscar",
+                apellido: "Martinez",
+                edad: 38,
+                ocupacion: "alucno",
+                nombreCompleto : function(){
+                    return this.nombre + " " + this.apellido + "<br>"
+                }
+            }
+            document.getElementById("demo1").innerHTML = Persona.nombre + " es " + Persona["ocupacion"] + "<br>" + Persona.nombreCompleto();
+        </script>
+    </body>
+</html>
