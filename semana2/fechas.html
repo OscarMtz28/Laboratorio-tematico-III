@@ -14,6 +14,8 @@
         <p id="demo2" class="fecha"></p>
         <p>Utilizar Date(year, month, day,...) crea un objeto a partir del argumento numerico correspondiente</p>
         <p id="demo3" class="fecha"></p>
+        <p>Utilizar Date(milisegundos) crea al objeto a partir del agumento numerico correspondiente</p>
+        <p id="demo4" class="fecha"></p>
         <script>
             const d1 = new Date;
             document.getElementById("demo1").innerHTML = d1;
@@ -28,6 +30,16 @@
             const d3b = new Date(2025,10, 30);
 
             document.getElementById("demo3").innerHTML = d3a + "<br>" + d3b;
+
+            // tiempo en cero de JS
+
+            const d4a = new Date(0);
+            const d4b = new Date(100000000000);
+            const d4c = new Date(-1000000000000);
+            const d4d = new Date(7 * 24 * 60 * 60 * 1000);
+            document.getElementById("demo4").innerHTML = d4a.toString() + " - (tiempo cero) <br>" + d4b + "<br>" + d4c + "<br>" + d4d + "<br>";
+
+
 
         </script>
     </body>
