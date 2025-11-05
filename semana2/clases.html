@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h2>Clases en JavaScript</h2>
+        <p>Las clases en JavaScript son plantillas para objetos en JS</p>
+        <p id="demo"></p>
+        <script>
+            // Definicion de la clase auto 
+            class Auto {
+                constructor(marca,modelo,color){
+                    this.marca = marca;
+                    this.modelo = modelo;
+                    this.color = color;
+                }
+                edad(x){
+                    return x-this.modelo;
+                }
+                
+            }
+
+            const auto1 = new Auto("Volkswagen Beetle", 2016, "Amarillo");
+            const auto2 = new Auto("Camaro", 1996, "Azul");
+            const fecha = new Date();
+            let año = fecha.getFullYear();
+            document.getElementById("demo").innerHTML = 
+            auto1.marca + "<br>" + 
+            auto2.marca + "<br>" +
+            "El auto " + auto1.marca + " tiene " + auto1.edad(año) + " años <br>" +
+            "El auto " + auto2.marca + " tiene " + auto2.edad(año) + " años"
+            ;
+        </script>
+    </body>
+</html>
