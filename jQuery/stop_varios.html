@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip1").click(function () {
+                $("#panel1").slideToggle(2500);
+            });
+            $("#stop").click(function () {
+                $("#panel1").stop();
+            });
+            $("#flip2").click(function () {
+                $("#panel2").slideToggle(2500);
+            }); $("#stop").click(function () {
+                $("#panel2").stop();
+            });
+        });
+    </script>
+    <style>
+        #flip1,
+        #flip2 {
+            color: white;
+            background-color: aquamarine;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #panel1,
+        #panel2 {
+            padding: 15px;
+            background-color: lightsalmon;
+            display: none;
+        }
+
+        div {
+            border: solid 1px black
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Stop</h2>
+    <p>El metodo stop() en jquery se utiliza para detener una animacion o efecto antes que se realice</p>
+    <button id="stop">Detener slide</button><br><br>
+    <div id="flip1">Clic para ocultar o mostrar</div>
+    <div id="panel1">
+        <p>Este es el contenido del panel</p>
+        <p>Aqui hay mas texto</p>
+        <ul>
+            <li>Un elemento </li>
+            <li>Otro elemento</li>
+        </ul>
+    </div>
+    <div id="flip2">Clic para ocultar o mostrar</div>
+    <div id="panel2">
+        <p>Este es el contenido del panel</p>
+        <p>Aqui hay mas texto</p>
+        <ul>
+            <li>Un elemento </li>
+            <li>Otro elemento</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#test").text());
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+            $("#btn3").click(function () {
+                alert("Val: " + $("#test1").val());
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Metodos DOM - Obetener contenido(GET)</h2>
+    <p>Se tienen 3 metodos que permiten obtener el contenido de diferentes elementos </p>
+    <p id="test">En este párrafo tenemos <b>negritas</b> e <i>italicas</i></p>
+    <p>Nombre: <input type="text" id="test1" value="Gustav"></p>
+    <button id="btn1">Mostrar text</button>
+    <button id="btn2">Mostrar HTML</button>    
+    <button id="btn3">Mostar Val</button>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").hide("slow");
+                alert("El parrafo esta oculto");
+            });
+            $("#btn2").click(function () {
+                $("p").hide("slow", function () {
+                    alert("El parrafo esta oculto");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1">ocultar Parrafo (sin callback)</button>
+    <button id="btn2">ocultar Parrafo (con callback)</button>
+    <p>Este es un parrafo de ejemplo.</p>
+    </ul>
+</body>
+
+</html>

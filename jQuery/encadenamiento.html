@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#p1").css("color", "red")
+                    .delay(1000)
+                    .hide("slow")
+                    .show("slow")
+                    .delay(500)
+                    .fadeOut(1000)
+                    .fadeIn(1000)
+                    .delay(500)
+                    .css("background-color", "lightblue");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Encadenamiento</h2>
+    <p>El encadenameto permite ejecutar multiples comandos de jQeury de dorma secuencial sobre un mismo elemento.</p>
+    <button>click Aqui</button>
+    <p id="p1">En este parrafo se muestra un ejemplo de encadenamiento</p>
+</body>
+
+</html>
