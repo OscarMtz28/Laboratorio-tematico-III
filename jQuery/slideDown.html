@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+        </script>
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideDown();
+            });
+
+            });
+    </script>|
+    <style>
+        #flip, #panel{
+            text-align: center;
+            color:aliceblue;
+            background-color: black;
+            border: solid 1px greenyellow;
+            padding: 5px;
+        }
+        #panel{
+            display: none;
+            padding: 15px;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <h2>Slide Down</h2>
+        <div id="flip">click para mostrar</div>
+        <div id="panel">Este es el contenido del panel</div>
+    </body>
+</html>
