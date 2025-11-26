@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //$("#div1").load("demo.txt");
+                $("#div1").load("pagina.txt #p1");
+            });
+            $("#btn2").click(function(){
+                $("#div1").load("pagina.txt", function(responsetxt, statustxt, xhr){
+                    if(statustxt == "success")
+                        alert("El contenido del archivo se cargó correctamente");
+                    if(statustxt == "error")
+                        alert("Error: " + xhr.status + ":" + xhr.statustxt);
+                });
+            });
+        });
+    </script>
+  </head>
+
+  <body>
+    <h2>jQuery Ajax</h2>
+    <p>
+      Ajax permite el intercambio de datos en el servidor con el fin de
+      actualizar algiunas partes de la pagina web sin necesidad de recargar la
+      pagina completa
+    </p>
+    <p>El significado de las siglas es: AJAX = Asincrono JavaScript and XML</p>
+    <p>
+      Ajax carga la informacion en segundo plano y la muestra en la seccion
+      correspondiente de la pagina, sin volver a abrirla desde cero
+    </p>
+    <h3>Cargar (load)</h3>
+    <p>
+      El metodo load() carga los datos desde un servidor y coloca el resultado
+      en el elemento seleccionado
+    </p>
+    <p>Su sintaxis es:</p>
+    <code> $(selector).load(url, datos, callback) <br /><br /> </code>
+    <div id="div1" style="background-color: beige">
+      Con jQuery podemos usar AJAXpara cambiar el documento del texto desde un
+      archivo.
+    </div>
+    <br />
+    <button id="btn1">Cargar desde un archivo externo</button>
+    <button id="btn2">Cargar desde un archivo externo (callback)</button>
+  </body>
+</html>

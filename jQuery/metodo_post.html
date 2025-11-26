@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $.post("demo_post.php", 
+            {
+                name:"Oscar",
+                school: "UAM"
+            }, 
+            function(data, status){
+                alert("Datos: " + data + "\nEstado: " + status);
+            });
+        });
+    </script>
+</head>
+
+<body>
+<h3>Metodo post</h3>
+<p>El metodo post() realiza una peticion al servidor a traves de http POST.</p>
+<p>Su simntaxis es:</p>
+<code>$.post(URL, data, callback)</code> <br><br>
+<button id="btn1">Enviar una peticion HTTP POST</button>
+</body>
+
+</html>

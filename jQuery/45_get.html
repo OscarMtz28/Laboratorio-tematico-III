@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $.get("demo_get.php", function(data, status){
+                    alert("Datos: " + data + "\nEstado: " + status);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Metodo get</h3>
+    <p>El metodo get() se utiliza para pedir datos al servidor. Utiliza la peticion HTTP GET</p>
+    <p>Su sintaxis es:
+    </p>
+    <code>$.get(URL, data, callback)</code> <br><br>
+    <button id="btn1">Enviar una peticion HTTP GET</button>
+</body>
+
+</html>

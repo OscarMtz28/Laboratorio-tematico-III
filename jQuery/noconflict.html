@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $noConflict();
+        jQuery(document).ready(function () {
+            jQuery("#btn1").click(function(){
+                jQuery("#p1").text("jQuery funciona correctamente");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>jquery - Metodo noConflict</h1>
+    <p>En ocaciones se requiere la utilizacion de otros frameworks en una pagina. Pueden existir problemas con ellos pues utilizan el simbolo $ como atajo. </p>
+    <p>Si dos frameworks utilizan el mismo atajo, uno de ellos se detendra </p>
+    <p>El metodo noConflict() "suelta" el identificador $, con el fin que otros scripts puedan utilizarlo</p>
+    <p id=""p1>Texto de ejemplo</p>
+    <button id="btn1">Comprobar jquery</button>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
