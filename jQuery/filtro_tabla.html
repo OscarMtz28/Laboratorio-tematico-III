@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#miFiltro").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#miTabla tr").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Filtrar elementos de una tabla con jQuery</h2>
+    <p>Es posible filtrar en tiempo real los elementos que se encuentren en cualquier celda de una tabla</p>
+    <hr>
+    <p><b>Instrucciones: </b> Escribir algo en el campo de texto para buscar celdas que constengan esa cadena</p>
+    <input type="text" id="miFiltro" placeholder="Buscar..."><br> <br>
+    <table >
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody id="miTabla">
+                <tr>
+                    <td>Jhon</td>
+                    <td>Dow</td>
+                    <td>jhon@ejemplo.com</td>
+                </tr>
+                <tr>
+                    <td>Marie</td>
+                    <td>Moe</td>
+                    <td>marie@ejemplo.com</td>
+                </tr>
+                <tr>
+                    <td>Luis</td>
+                    <td>Smith</td>
+                    <td>luis@ejemplo.com</td>
+                </tr>
+                <tr>
+                    <td>Ann</td>
+                    <td>Lee</td>
+                    <td>ann@ejemplo.com</td>
+                </tr>
+                
+            </tbody>
+        
+    </table>
+</body>
+
+</html>

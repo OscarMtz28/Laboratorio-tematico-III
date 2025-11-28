@@ -5,10 +5,10 @@
 
     </script>
     <script>
-        $noConflict();
+        var jq = $.noConflict();
         jQuery(document).ready(function ($) {
-            $("#btn1").click(function(){
-                $("#p1").text("jQuery funciona correctamente");
+            jq("#btn1").click(function(){
+                jq("#p1").text("jQuery funciona correctamente");
             });
 
         });
@@ -20,8 +20,8 @@
     <p>En ocaciones se requiere la utilizacion de otros frameworks en una pagina. Pueden existir problemas con ellos pues utilizan el simbolo $ como atajo. </p>
     <p>Si dos frameworks utilizan el mismo atajo, uno de ellos se detendra </p>
     <p>El metodo noConflict() "suelta" el identificador $, con el fin que otros scripts puedan utilizarlo</p>
-    <p><i>Se puede manejar el identificador de forma local dentro de una funcion</i></p>
-    <p id=""p1>Texto de ejemplo</p>
+    <p><i>Se define un alias, en este caso "jq" para utilizarlo en lugar del nombre completo "jQuery"</i></p>
+    <p id="p1">Texto de ejemplo</p>
     <button id="btn1">Comprobar jquery</button>
 </body>
 

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#miFiltro").on("keyup", function(){
+                var valor = $(this).val().toLowerCase();
+                $("#div1 *").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Filtrar elementos de cualquier tipo con jQuery</h2>
+    <p>Es posible filtrar en tiempo real los elementos que se encuentren</p>
+    <hr>
+    <p><b>Instrucciones: </b> Escribir algo en el campo de texto para buscar elementos que constengan esa cadena</p>
+    <input type="text" id="miFiltro" placeholder="Buscar..."><br> <br>
+    <div id="div1">
+        <h3>Este es el div1</h3>
+        <p>Este es un parrafo</p>
+        <p>Este es otro parrafo</p>
+        <div>Este es un div dentro de div1</div>
+        <button>Este es un boton</button>
+        <button>Este es otro boton</button>
+        <p>Un parrafo mas</p>
+        <ul id="miLista">
+            <li>Primer elemento</li>
+            <li>Segundo elemento de la lista</li>
+            <li>Tercera viñeta</li>
+            <li>Cuarto elemento</li>
+            <li>Quinto</li>
+        </ul>
+    </div>
+    <div id="div2">
+        <h3>Este es el div2</h3>
+        <p>Este es un parrafo</p>
+        <p>Este es otro parrafo</p>
+    </div>
+</body>
+
+</html>

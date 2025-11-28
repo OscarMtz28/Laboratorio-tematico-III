@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#miFiltro").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#miLista li").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Filtrar elementos de una lista con jQuery</h2>
+    <p>Es posible filtrar en tiempo real los elementos que coincidan con algun criterio especificado</p>
+    <hr>
+    <p><b>Instrucciones: </b> Escribir algo en el campo de texto para buscar elementos de una lista que constengan esa cadena</p>
+    <input type="text" id="miFiltro" placeholder="Buscar..."><br>
+    <ul id="miLista">
+        <li>Primer elemento</li>
+        <li>Segundo elemento de la lista</li>
+        <li>Tercera viñeta</li>
+        <li>Cuarto elemento</li>
+        <li>Quinto</li>
+    </ul>
+</body>
+
+</html>
